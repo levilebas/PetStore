@@ -39,6 +39,7 @@ namespace Unify.PetStore.Test.UnitTests.Services
             var result = await _sut.GetCategorisedPetsByStatusAsync(Anonymous.Available);
 
             Assert.AreEqual(2, result.First(x => x.Key == category1.ToString()).Count(), $"Category {category1} should contain 2 pets");
+            Assert.AreEqual(1, result.First(x => x.Key == category2.ToString()).Count(), $"Category {category2} should contain 1 pet");
         }
 
         private Pet CreatePet(PetStatus petStatus, string petName, int category)
