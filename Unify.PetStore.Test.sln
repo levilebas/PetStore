@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{7B26EFBE-116C-438D-A557-C92632703E1B}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		PetStore.nswag = PetStore.nswag
 		README.md = README.md
 	EndProjectSection
 EndProject
