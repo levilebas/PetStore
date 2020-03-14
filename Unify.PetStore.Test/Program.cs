@@ -30,7 +30,7 @@ namespace Unify.PetStore.Test
             Console.Read();
         }
 
-        internal static void SortCategoryPetsByNameDescendingAndPrint(List<IGrouping<string, Pet>> categorisedAvailablePets)
+        private static void SortCategoryPetsByNameDescendingAndPrint(List<IGrouping<string, Pet>> categorisedAvailablePets)
         {
             foreach (var petsGroupedByCategory in categorisedAvailablePets)
             {
