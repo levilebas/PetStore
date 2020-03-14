@@ -7,9 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unify.PetStore.Test", "Unif
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{D400504A-AB8B-40CC-8F90-A636164730D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unify.PetStore.Test.UnitTests", "Unify.PetStore.Test.UnitTests\Unify.PetStore.Test.UnitTests.csproj", "{074AD326-B8C2-41A5-8E6C-82EB653915F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unify.PetStore.Test.UnitTests", "Unify.PetStore.Test.UnitTests\Unify.PetStore.Test.UnitTests.csproj", "{074AD326-B8C2-41A5-8E6C-82EB653915F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unify.PetStore.Services", "Unify.PetStore.Services\Unify.PetStore.Services.csproj", "{DD9AF847-015D-4C62-B194-23B20D4F4212}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unify.PetStore.Services", "Unify.PetStore.Services\Unify.PetStore.Services.csproj", "{DD9AF847-015D-4C62-B194-23B20D4F4212}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{7B26EFBE-116C-438D-A557-C92632703E1B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
