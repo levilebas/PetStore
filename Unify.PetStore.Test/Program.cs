@@ -26,6 +26,8 @@ namespace Unify.PetStore.Test
                 Console.WriteLine(e);
                 throw;
             }
+
+            Console.Read();
         }
 
         internal static void SortCategoryPetsByNameDescendingAndPrint(List<IGrouping<string, Pet>> categorisedAvailablePets)
