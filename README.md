@@ -28,5 +28,22 @@ Category 2 Name
 ```
 
 ### Notes
-1. PetStore Client Generated using NSwag Studio https://github.com/RicoSuter/NSwag/wiki/NSwagStudio and PetStore swagger json https://petstore.swagger.io/v2/swagger.json
-2. Newtonsoft.Json.Required.AllowNull set on Pet and Category to allow for bad or incomplete data
+1. PetStoreClient Generated using NSwag Studio https://github.com/RicoSuter/NSwag/wiki/NSwagStudio and PetStore swagger json https://petstore.swagger.io/v2/swagger.json
+2. PetStoreClient modified with
+```
+partial void UpdateJsonSerializerSettings(Newtonsoft.Json.JsonSerializerSettings settings)
+{
+    settings.ContractResolver = new SafeContractResolver();
+}
+
+class SafeContractResolver : Newtonsoft.Json.Serialization.DefaultContractResolver
+{
+    protected override Newtonsoft.Json.Serialization.JsonProperty CreateProperty(System.Reflection.MemberInfo member, Newtonsoft.Json.MemberSerialization memberSerialization)
+    {
+        var jsonProp = base.CreateProperty(member, memberSerialization);
+        jsonProp.Required = Newtonsoft.Json.Required.Default;
+        return jsonProp;
+    }
+}
+```
+3. PetStoreClient modified by adding a default category * = new Category { Id = 0, Name = "Uncategorized"};*
