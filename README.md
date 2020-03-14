@@ -47,3 +47,6 @@ class SafeContractResolver : Newtonsoft.Json.Serialization.DefaultContractResolv
 }
 ```
 3. PetStoreClient modified by adding a default category * = new Category { Id = 0, Name = "Uncategorized"};*
+
+### TODO
+1. Extract printing and ordering functionality from Program.cs so that it can be tested.
