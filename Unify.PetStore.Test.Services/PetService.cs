@@ -17,6 +17,7 @@ namespace Unify.PetStore.Test.Services
         public async Task<List<IGrouping<string, Pet>>> GetCategorisedPetsByStatusAsync(Anonymous status)
         {
             var findPetsByStatusResult = await _petStoreClient.FindPetsByStatusAsync(new List<Anonymous> { status });
+            // assumption made here that it is best to group by Category.Name. Category.Id is nullable and based on the data, it is seldom set.
             return findPetsByStatusResult
                 .GroupBy(x => x.Category.Name)
                 .ToList();
