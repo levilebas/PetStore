@@ -4,6 +4,7 @@ PetStore Technical Test
 ### Prequisites 
 1. Visual Studio 2019 (https://visualstudio.microsoft.com/downloads/)
 2. .Net Core 3.1 SDK (https://dotnet.microsoft.com/download/dotnet-core/3.1)
+3. Access to the PetStore API https://petstore.swagger.io/
 
 ### Instructions
 1. Clone this repository (https://github.com/levilebas/PetStore)
@@ -21,3 +22,4 @@ Show example of how results will be displayed here
 ```
 
 ### Notes
+PetStore Client Generated using NSwag Studio https://github.com/RicoSuter/NSwag/wiki/NSwagStudio and PetStore swagger json https://petstore.swagger.io/v2/swagger.json
