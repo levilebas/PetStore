@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Unify.PetStore.Test.Services.Contract;
 
-namespace Unify.PetStore.Test.Services.Contract
+namespace Unify.PetStore.Test.Services
 {
     public class PetService : IPetService
     {

@@ -17,9 +17,16 @@ PetStore Technical Test
 
 4. View Results 
 ```
-Show example of how results will be displayed here
+Uncategorized
+--PetNameD
+Category 1 Name
+--PetNameA
+--PetNameC
+Category 2 Name
+--PetNameB
 
 ```
 
 ### Notes
-PetStore Client Generated using NSwag Studio https://github.com/RicoSuter/NSwag/wiki/NSwagStudio and PetStore swagger json https://petstore.swagger.io/v2/swagger.json
+1. PetStore Client Generated using NSwag Studio https://github.com/RicoSuter/NSwag/wiki/NSwagStudio and PetStore swagger json https://petstore.swagger.io/v2/swagger.json
+2. Newtonsoft.Json.Required.AllowNull set on Pet and Category to allow for bad or incomplete data
