@@ -9,13 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{D400504A-A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unify.PetStore.Test.UnitTests", "Unify.PetStore.Test.UnitTests\Unify.PetStore.Test.UnitTests.csproj", "{074AD326-B8C2-41A5-8E6C-82EB653915F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unify.PetStore.Services", "Unify.PetStore.Services\Unify.PetStore.Services.csproj", "{DD9AF847-015D-4C62-B194-23B20D4F4212}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{7B26EFBE-116C-438D-A557-C92632703E1B}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unify.PetStore.Test.Services", "Unify.PetStore.Test.Services\Unify.PetStore.Test.Services.csproj", "{A88B407D-88E4-4520-B366-ABD4A11F6084}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6C979735-5D0B-42D6-BE2D-56189F5D8862}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,16 +33,17 @@ Global
 		{074AD326-B8C2-41A5-8E6C-82EB653915F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{074AD326-B8C2-41A5-8E6C-82EB653915F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{074AD326-B8C2-41A5-8E6C-82EB653915F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD9AF847-015D-4C62-B194-23B20D4F4212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD9AF847-015D-4C62-B194-23B20D4F4212}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD9AF847-015D-4C62-B194-23B20D4F4212}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD9AF847-015D-4C62-B194-23B20D4F4212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88B407D-88E4-4520-B366-ABD4A11F6084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88B407D-88E4-4520-B366-ABD4A11F6084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88B407D-88E4-4520-B366-ABD4A11F6084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88B407D-88E4-4520-B366-ABD4A11F6084}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{074AD326-B8C2-41A5-8E6C-82EB653915F9} = {D400504A-AB8B-40CC-8F90-A636164730D7}
+		{A88B407D-88E4-4520-B366-ABD4A11F6084} = {6C979735-5D0B-42D6-BE2D-56189F5D8862}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {970BD4C9-A4AD-47E9-9335-EE64BB698BC4}
