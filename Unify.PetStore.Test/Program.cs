@@ -19,7 +19,8 @@ namespace Unify.PetStore.Test
                 var petService = serviceProvider.GetService<IPetService>();
 
                 var categorizedAvailablePets = await petService.GetCategorisedPetsByStatusAsync(Anonymous.Available);
-                SortCategoryPetsByNameDescendingAndPrint(categorizedAvailablePets);
+                if (!categorizedAvailablePets.Any()) throw new Exception("There are no pets to display!");
+                petService.SortCategoryPetsByNameDescendingAndPrint(categorizedAvailablePets);
             }
             catch (Exception e)
             {
@@ -30,24 +31,11 @@ namespace Unify.PetStore.Test
             Console.Read();
         }
 
-        private static void SortCategoryPetsByNameDescendingAndPrint(List<IGrouping<string, Pet>> categorisedAvailablePets)
-        {
-            foreach (var petsGroupedByCategory in categorisedAvailablePets)
-            {
-                var categoryName = petsGroupedByCategory?.Key;
-                Console.WriteLine(categoryName);
-                if (petsGroupedByCategory == null || !petsGroupedByCategory.Any()) continue;
-                foreach (var pet in petsGroupedByCategory.OrderByDescending(x => x.Name))
-                {
-                    Console.WriteLine($"--{pet.Name}");
-                }
-            }
-        }
-
         private static ServiceProvider ConfigureServices()
         {
             var serviceProvider = new ServiceCollection()
                 .AddSingleton(new HttpClient())
+                .AddTransient<ILineWriterService, ConsoleLineWriterService>()
                 .AddTransient<IPetStoreClient, PetStoreClient>()
                 .AddTransient<IPetService, PetService>()
                 .BuildServiceProvider();

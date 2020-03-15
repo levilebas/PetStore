@@ -8,10 +8,13 @@ namespace Unify.PetStore.Test.Services
     public class PetService : IPetService
     {
         private readonly IPetStoreClient _petStoreClient;
+        private readonly ILineWriterService _lineWriterService;
 
-        public PetService(IPetStoreClient petStoreClient)
+        public PetService(IPetStoreClient petStoreClient,
+            ILineWriterService lineWriterService)
         {
             _petStoreClient = petStoreClient;
+            _lineWriterService = lineWriterService;
         }
 
         public async Task<List<IGrouping<string, Pet>>> GetCategorisedPetsByStatusAsync(Anonymous status)
@@ -21,6 +24,20 @@ namespace Unify.PetStore.Test.Services
             return findPetsByStatusResult
                 .GroupBy(x => x.Category.Name)
                 .ToList();
+        }
+
+        public void SortCategoryPetsByNameDescendingAndPrint(List<IGrouping<string, Pet>> categorizedAvailablePets)
+        {
+            foreach (var petsGroupedByCategory in categorizedAvailablePets)
+            {
+                var categoryName = petsGroupedByCategory?.Key;
+                _lineWriterService.WriteLine(categoryName);
+                if (petsGroupedByCategory == null || !petsGroupedByCategory.Any()) continue;
+                foreach (var pet in petsGroupedByCategory.OrderByDescending(x => x.Name))
+                {
+                    _lineWriterService.WriteLine($"--{pet.Name}");
+                }
+            }
         }
     }
 }
