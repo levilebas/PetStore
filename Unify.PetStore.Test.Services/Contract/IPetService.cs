@@ -12,5 +12,11 @@ namespace Unify.PetStore.Test.Services.Contract
         /// <param name="status">pet status</param>
         /// <returns></returns>
         Task<List<IGrouping<string, Pet>>> GetCategorisedPetsByStatusAsync(Anonymous status);
+
+        /// <summary>
+        /// Sorts categorized pets descending by name and prints their name
+        /// </summary>
+        /// <param name="categorizedAvailablePets">grouped list of pets</param>
+        void SortCategoryPetsByNameDescendingAndPrint(List<IGrouping<string, Pet>> categorizedAvailablePets);
     }
 }
