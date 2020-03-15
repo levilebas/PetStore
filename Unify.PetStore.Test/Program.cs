@@ -19,8 +19,14 @@ namespace Unify.PetStore.Test
                 var petService = serviceProvider.GetService<IPetService>();
 
                 var categorizedAvailablePets = await petService.GetCategorisedPetsByStatusAsync(Anonymous.Available);
-                if (!categorizedAvailablePets.Any()) throw new Exception("There are no pets to display!");
-                petService.SortCategoryPetsByNameDescendingAndPrint(categorizedAvailablePets);
+                if (!categorizedAvailablePets.Any())
+                {
+                    Console.WriteLine("There are no pets to display!");
+                }
+                else
+                {
+                    petService.SortCategoryPetsByNameDescendingAndPrint(categorizedAvailablePets);
+                }
             }
             catch (Exception e)
             {
