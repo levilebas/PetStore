@@ -28,7 +28,7 @@ namespace Unify.PetStore.Test.UnitTests.Services
             var category1 = 1;
             var category2 = 2;
 
-            var response = new List<Pet>
+            var testData = new List<Pet>
             {
                 CreatePet(PetStatus.Available, "Test Pet A", category1),
                 CreatePet(PetStatus.Available, "Test Pet B", category2),
@@ -36,7 +36,7 @@ namespace Unify.PetStore.Test.UnitTests.Services
             };
 
             _mockPetStoreClient.Setup(x => x.FindPetsByStatusAsync(new List<Anonymous> { Anonymous.Available }))
-                .ReturnsAsync(response);
+                .ReturnsAsync(testData);
 
             var result = await _sut.GetCategorisedPetsByStatusAsync(Anonymous.Available);
 
@@ -79,13 +79,6 @@ namespace Unify.PetStore.Test.UnitTests.Services
         [Test]
         public void SortCategoryPetsByNameDescendingAndPrint_WhenCategorizedGroupCollectionIsEmpty_ShouldNotPrintAnything()
         {
-            var testData = new List<Pet>
-            {
-                CreatePet(PetStatus.Available, "Test Pet A", 1),
-                CreatePet(PetStatus.Available, "Test Pet B", 2),
-                CreatePet(PetStatus.Available, "Test Pet C", 1)
-            }.GroupBy(x => x.Category.Name).ToList();
-
             _sut.SortCategoryPetsByNameDescendingAndPrint(new List<IGrouping<string, Pet>>());
 
             _mockLineWriterService.Verify(x => x.WriteLine(It.IsAny<string>()), Times.Never);
